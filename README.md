@@ -1,2 +1,7 @@
 # titanic-competition
 This repository is intended to hold the code and the structure of Titanic Disaster competition model training implemented by Kevin Guevara, Victor Londono, Emil Mehdikhanli
+
+There are two sets of input data: train data with 891 entries and test data with 418 entries. Cabin number and ticket number columns are dropped since there is not enough qualitative data for the cabin numbers: 687 out of 891 entries are null, ~77%; on the other hand, ticket numbers are not numeric entries and do not embrace any significant pattern.
+Just like the cabin number column, the Age column and the Fare column from test data, and the Age column and the Embarked column from the traindata have null entries. To overcome the issue: filled with the most frequent location for the missing embarked entries, filled with the median for the missing fare entries, filled with the median for the missing age entries after combining train data and test data. Moreover, the sex column transformed into 0/1. One last preprocessing unit was introducing log representation of fare column in order to normalize.
+After preprocessing the input data, training model selection is performed. The final vision of the input data includes one hot encoding and numeric entries. Moreover, the ground truth is a binary value: 0 for not survived and 1 for survived. As a result, our team decided that the random forest classifier model and the logistic regression model are the most effective classification models that can be utilized under the given circumstances.
+
